@@ -29,10 +29,11 @@ const tugasModel = sq.define("tugas", {
         defaultValue:0
     }
 });
-tugasModel.belongTo(jadwalModel)
+
+tugasModel.belongsTo(jadwalModel)
 jadwalModel.hasMany(tugasModel)
 
-tugasModel.belongTo(userModel,{foreignKey:'updatedBy'})
+tugasModel.belongsTo(userModel,{foreignKey:'updatedBy'});
 userModel.hasMany(tugasModel)
 
 module.exports=tugasModel;

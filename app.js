@@ -1,5 +1,5 @@
 const express= require('express')
-const port=5432
+const port=8080
 const app= express()
 const routing=require('./routing')
 const cors= require('cors')

@@ -6,3 +6,4 @@ function authorization(req,res,next){
         res.status(500).json({status:"anda bukan guru"})
     }
 }
+module.exports=authorization

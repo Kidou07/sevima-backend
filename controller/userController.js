@@ -1,6 +1,6 @@
 const bcrypt=require('../helper/bcrypt')
 const userModel=require('../model/userModel')
-const jwt=require('../helper')
+const jwt=require('../helper/jwt')
 
 class userController{
     static view(req,res){
