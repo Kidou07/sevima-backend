@@ -1,10 +1,44 @@
-const bcrypt=require('../authentification/bcrypt')
+const bcrypt=require('../helper/bcrypt')
 const userModel=require('../model/userModel')
-const jwt=require('../authentification')
+const jwt=require('../helper')
 
 class userController{
     static view(req,res){
         userModel.findAll({
+        }).then(data=>{
+            res.json(data)
+        }).catch(err=>{
+            res.json(err)
+        })
+    }
+    static viewGuru(req,res){
+        userModel.findAll({
+            where:{
+                jabatan:"guru"
+            }
+        }).then(data=>{
+            res.json(data)
+        }).catch(err=>{
+            res.json(err)
+        })
+    }
+    static profile(req,res){
+        const{id}=req.params
+        userModel.findAll({
+            where:{
+                id:id
+            }
+        }).then(data=>{
+            res.json(data)
+        }).catch(err=>{
+            res.json(err)
+        })
+    }
+    static  account(req,res){
+        userModel.findAll({
+            where:{
+                id:req.dataUser.id
+            }
         }).then(data=>{
             res.json(data)
         }).catch(err=>{

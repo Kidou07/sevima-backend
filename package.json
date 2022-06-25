@@ -1,0 +1,19 @@
+{
+  "name": "projekweb",
+  "version": "1.0.0",
+  "description": "membuat sebuah web seperti google classroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kidou07/sevima-backend.git"
+  },
+  "author": "sabil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kidou07/sevima-backend/issues"
+  },
+  "homepage": "https://github.com/Kidou07/sevima-backend#readme"
+}

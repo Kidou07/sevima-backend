@@ -31,4 +31,5 @@ const userModel=sq.define("userModel",{
     }
 
 })
+userModel.sync({alter:true})
 module.exports=userModel;

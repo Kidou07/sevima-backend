@@ -1,5 +1,7 @@
 const{DataTypes}=require('sequelize')
-const sq=require('../koneksi/koneksi')
+const sq=require('../koneksi/koneksi');
+const jadwalModel = require('./jadwalModel');
+const userModel = require('./userModel');
 
 
 const tugasModel = sq.define("tugas", {
@@ -13,8 +15,7 @@ const tugasModel = sq.define("tugas", {
         defaultValue:0
     },
     tugas:{
-        type:DataTypes.INTEGER,
-        defaultValue:""
+        type:DataTypes.STRING,
     },
     keterangan:{
         type:DataTypes.STRING,
@@ -28,4 +29,10 @@ const tugasModel = sq.define("tugas", {
         defaultValue:0
     }
 });
+tugasModel.belongTo(jadwalModel)
+jadwalModel.hasMany(tugasModel)
+
+tugasModel.belongTo(userModel,{foreignKey:'updatedBy'})
+userModel.hasMany(tugasModel)
+
 module.exports=tugasModel;
